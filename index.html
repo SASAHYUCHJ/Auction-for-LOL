@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SASA LAS Auction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #videoBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #videoPlayer {
+            object-fit: fill;
+        }
+
+        #startButton {
+            cursor: pointer;
+            width: 200px;
+            height: auto;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #aButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #bButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 18%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #cButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 26%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #dButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 34%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #eButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 42%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #fButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #gButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #hButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 66%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #iButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 74%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #jButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 82%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #kButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 70%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #lButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #mButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 18%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #nButton {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 26%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #oButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 34%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #pButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 42%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #qButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #rButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #sButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 66%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #tButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 74%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #uButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 82%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #vButton{
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 85%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+
+
+        .highlight {
+            border: 2px solid red !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoBackground">
+        <video id="videoPlayer" width="100%" height="100%" autoplay loop muted>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <img id="startButton" src="button2.png" alt="시작하기">
+    <img id="aButton" src="김도현.png">
+    <img id="bButton" src="이준호.png">
+    <img id="cButton" src="이제현.png">
+    <img id="dButton" src="황창환.png">
+    <img id="eButton" src="이유환.png">
+    <img id="fButton" src="지수환.png">
+    <img id="gButton" src="유지호.png">
+    <img id="hButton" src="정영근.png">
+    <img id="iButton" src="신주형.png">
+    <img id="jButton" src="박은석.png">
+    <img id="kButton" src="정주빈.png">
+    <img id="lButton" src="도인탁.png">
+    <img id="mButton" src="박해준.png">
+    <img id="nButton" src="조현준.png">
+    <img id="pButton" src="이한희.png">
+    <img id="qButton" src="조민서.png">
+    <img id="rButton" src="박성준.png">
+    <img id="sButton" src="방준형.png">
+    <img id="tButton" src="게스트1.png">
+    <img id="uButton" src="게스트2.png">
+    <img id="vButton" src="게스트3.png">
+    <ul id="list"></ul>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const aButton = document.getElementById('aButton');
+        const videoBackground = document.getElementById('videoBackground');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const list = document.getElementById('list');
+        let aAdded = false;
+        const buttons = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v'];
+        function setButtonOpacity(opacity) {
+            for (const button of buttons) {
+            document.getElementById(button + 'Button').style.opacity = opacity;
+            }
+        }
+        function hideButtons() {
+            for (const button of buttons) {
+            document.getElementById(button + 'Button').style.display = 'none';
+            }
+        }
+
+
+
+        aButton.addEventListener('click', function() {
+            if (aAdded) {
+                aButton.classList.remove('highlight');
+                aAdded = false;
+                removeaFromList();
+            } else {
+                aButton.classList.add('highlight');
+                aAdded = true;
+                addaToList();
+            }
+        });
+
+        startButton.addEventListener('click', function() {
+            startButton.style.opacity = '0';
+            setButtonOpacity('0');
+            videoBackground.style.opacity = '0';
+
+            let fadeOutInterval = setInterval(function() {
+                if (videoPlayer.volume > 0) {
+                    videoPlayer.volume -= 0.1;
+                } else {
+                    clearInterval(fadeOutInterval);
+                    videoBackground.style.display = 'none';
+                    startButton.style.display = 'none';
+hideButtons();
+                }
+            }, 100);
+        });
+
+        window.addEventListener('DOMContentLoaded', function() {
+            let fadeInInterval = setInterval(function() {
+                if (videoPlayer.volume < 1) {
+                    videoPlayer.volume += 0.1;
+                } else {
+                    clearInterval(fadeInInterval);
+                    videoBackground.style.opacity = '1';
+                    startButton.style.opacity = '1';
+                    setButtonOpacity('1');
+                }
+            }, 100);
+        });
+
+        function addaToList() {
+            const listItem = document.createElement('li');
+            listItem.textContent = '김도현';
+            list.appendChild(listItem);
+        }
+
+        function removeaFromList() {
+            const listItems = list.getElementsByTagName('li');
+            for (let i = 0; i < listItems.length; i++) {
+                if (listItems[i].textContent === '김도현') {
+                    list.removeChild(listItems[i]);
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
